@@ -944,6 +944,32 @@
     background-repeat: no-repeat;
 }
 
+.products-hero.laboratory-scale {
+    background-image:
+        linear-gradient(105deg,
+            rgba(28, 30, 32, 0.60) 0%,
+            rgba(41, 43, 45, 0.47) 55%,
+            rgba(41, 43, 45, 0.36) 100%),
+        url("../assets/images/banner/lab-scale-banner.png");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.products-hero.truck_weighbridge {
+    background-image:
+        linear-gradient(105deg,
+            rgba(28, 30, 32, 0.60) 0%,
+            rgba(41, 43, 45, 0.47) 55%,
+            rgba(41, 43, 45, 0.36) 100%),
+        url("../assets/images/banner/truck_weighbridge_banner.png");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 /* Subtle industrial grid */
 
 .products-hero::before {
@@ -991,7 +1017,7 @@
     position: relative;
     z-index: 1;
 
-    width: 100%;
+    /* width: 100%; */
     max-width: 90rem;
     margin: 0 auto;
 
