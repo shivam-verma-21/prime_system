@@ -6,65 +6,108 @@ let revealObserver = null;
 
 
 function initializeHeaderInteractions() {
+    const menu = document.querySelector(".site-header .menu");
+    const navbar = document.querySelector(".site-header .navbar");
 
-document.addEventListener("DOMContentLoaded", () => {
-    const mainImage = document.getElementById("weighingMainImage");
-    const thumbnails = document.querySelectorAll(".weighing-thumbnail");
-    const zoomButton = document.getElementById("weighingImageZoom");
-    const lightbox = document.getElementById("weighingImageLightbox");
-    const lightboxImage = document.getElementById("weighingLightboxImage");
-    const closeButton = document.getElementById("weighingLightboxClose");
+    if (menu && navbar && menu.dataset.bound !== "true") {
+        const setMenuOpen = (isOpen) => {
+            navbar.classList.toggle("active", isOpen);
+            menu.setAttribute("aria-expanded", String(isOpen));
+        };
 
-    if (!mainImage || !lightbox || !lightboxImage) return;
+        menu.addEventListener("click", () => {
+            setMenuOpen(menu.getAttribute("aria-expanded") !== "true");
+        });
 
-    thumbnails.forEach((thumbnail) => {
-        thumbnail.addEventListener("click", () => {
-            const imagePath = thumbnail.dataset.image;
-            if (!imagePath) return;
+        menu.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                setMenuOpen(menu.getAttribute("aria-expanded") !== "true");
+            } else if (event.key === "Escape") {
+                setMenuOpen(false);
+            }
+        });
 
-            mainImage.src = imagePath;
-            lightboxImage.src = imagePath;
+        navbar.addEventListener("click", (event) => {
+            const productLink = event.target.closest(".nav-product-link");
 
-            thumbnails.forEach((item) => {
-                item.classList.remove("active");
-                item.setAttribute("aria-pressed", "false");
+            if (productLink && window.matchMedia("(max-width: 991px)").matches) {
+                event.preventDefault();
+
+                const productItem = productLink.closest(".dropdown-product");
+                const isOpen = !productItem.classList.contains("open");
+
+                productItem.classList.toggle("open", isOpen);
+                productLink.setAttribute("aria-expanded", String(isOpen));
+                return;
+            }
+
+            if (event.target.closest("a")) {
+                setMenuOpen(false);
+            }
+        });
+
+        menu.dataset.bound = "true";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const mainImage = document.getElementById("weighingMainImage");
+        const thumbnails = document.querySelectorAll(".weighing-thumbnail");
+        const zoomButton = document.getElementById("weighingImageZoom");
+        const lightbox = document.getElementById("weighingImageLightbox");
+        const lightboxImage = document.getElementById("weighingLightboxImage");
+        const closeButton = document.getElementById("weighingLightboxClose");
+
+        if (!mainImage || !lightbox || !lightboxImage) return;
+
+        thumbnails.forEach((thumbnail) => {
+            thumbnail.addEventListener("click", () => {
+                const imagePath = thumbnail.dataset.image;
+                if (!imagePath) return;
+
+                mainImage.src = imagePath;
+                lightboxImage.src = imagePath;
+
+                thumbnails.forEach((item) => {
+                    item.classList.remove("active");
+                    item.setAttribute("aria-pressed", "false");
+                });
+
+                thumbnail.classList.add("active");
+                thumbnail.setAttribute("aria-pressed", "true");
             });
+        });
 
-            thumbnail.classList.add("active");
-            thumbnail.setAttribute("aria-pressed", "true");
+        function openLightbox() {
+            lightboxImage.src = mainImage.src;
+            lightbox.classList.add("active");
+            lightbox.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+            closeButton?.focus();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove("active");
+            lightbox.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+            zoomButton?.focus();
+        }
+
+        zoomButton?.addEventListener("click", openLightbox);
+        closeButton?.addEventListener("click", closeLightbox);
+
+        lightbox.addEventListener("click", (event) => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && lightbox.classList.contains("active")) {
+                closeLightbox();
+            }
         });
     });
-
-    function openLightbox() {
-        lightboxImage.src = mainImage.src;
-        lightbox.classList.add("active");
-        lightbox.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-        closeButton?.focus();
-    }
-
-    function closeLightbox() {
-        lightbox.classList.remove("active");
-        lightbox.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
-        zoomButton?.focus();
-    }
-
-    zoomButton?.addEventListener("click", openLightbox);
-    closeButton?.addEventListener("click", closeLightbox);
-
-    lightbox.addEventListener("click", (event) => {
-        if (event.target === lightbox) {
-            closeLightbox();
-        }
-    });
-
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && lightbox.classList.contains("active")) {
-            closeLightbox();
-        }
-    });
-});
 
 
     const question = document.querySelectorAll(".question");
@@ -267,6 +310,59 @@ function initializeFooter() {
             footerContainer.innerHTML = data;
             observeRevealTargets();
 
+            const backToTop = document.getElementById("backToTop");
+            const progressCircle = document.querySelector(".progress-value");
+            const whatsappButton = document.querySelector(".floating-whatsapp");
+
+            if (backToTop) {
+                const circumference = 2 * Math.PI * 29;
+
+                if (progressCircle) {
+                    progressCircle.style.strokeDasharray = circumference;
+                    progressCircle.style.strokeDashoffset = circumference;
+                }
+
+                const updateScrollUI = () => {
+                    const scrollTop = window.scrollY;
+                    const scrollableHeight =
+                        document.documentElement.scrollHeight - window.innerHeight;
+                    const progress = scrollableHeight > 0
+                        ? Math.min(scrollTop / scrollableHeight, 1)
+                        : 0;
+
+                    backToTop.classList.toggle("is-visible", scrollTop > 300);
+
+                    if (progressCircle) {
+                        progressCircle.style.strokeDashoffset =
+                            circumference * (1 - progress);
+                    }
+                };
+
+                window.addEventListener("scroll", updateScrollUI, { passive: true });
+                updateScrollUI();
+
+                backToTop.addEventListener("click", () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                            ? "instant"
+                            : "smooth"
+                    });
+                });
+            }
+
+            if (whatsappButton && window.matchMedia("(hover: none)").matches) {
+                window.setTimeout(() => {
+                    if (!whatsappButton.matches(":hover")) {
+                        whatsappButton.classList.add("show-whatsapp-tooltip");
+
+                        window.setTimeout(() => {
+                            whatsappButton.classList.remove("show-whatsapp-tooltip");
+                        }, 3500);
+                    }
+                }, 1800);
+            }
+
             const yearElement = document.getElementById("year");
             if (yearElement) {
                 yearElement.textContent = new Date().getFullYear();
@@ -301,3 +397,35 @@ function initializePage() {
 initializePage();
 initializeHeaderInteractions();
 
+/* ==========================================
+   ENQUIRY FORM INTERACTIONS
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("primeEnquiryForm");
+    const message = document.getElementById("enquiryMessage");
+    const charCount = document.getElementById("enquiryCharCount");
+    const status = document.getElementById("contactFormStatus");
+
+    if (message && charCount) {
+        const updateCount = () => {
+            charCount.textContent = message.value.length;
+        };
+
+        message.addEventListener("input", updateCount);
+        updateCount();
+    }
+
+    if (!form || !status) return;
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!form.reportValidity()) return;
+
+        status.textContent =
+            "Your form is ready, but online submission has not been configured yet.";
+
+        status.style.color = "#b4232b";
+    });
+});

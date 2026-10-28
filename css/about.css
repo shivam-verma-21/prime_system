@@ -249,6 +249,18 @@
     background-size: cover;
 }
 
+.heading.service-banner {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.373),
+            rgba(255, 255, 255, 0.359)),
+        url("../assets/images/banner/service-banner.png");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
 
 /* Eyebrow label */
 

@@ -1,0 +1,2554 @@
+/* =========================================
+   SERVICE 01: INSTALLATION & COMMISSIONING
+========================================== */
+
+.service-installation-section {
+    position: relative;
+    padding: 8rem 6%;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.service-installation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: center;
+    gap: 6rem;
+}
+
+/* IMAGE */
+
+.service-installation-image {
+    position: relative;
+    min-width: 0;
+}
+
+.service-installation-image::before {
+    content: "";
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+    width: 12rem;
+    height: 12rem;
+    border-top: 3px solid #d62828;
+    border-left: 3px solid #d62828;
+    border-radius: 1rem 0 0;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.service-installation-image img {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 43rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1.2rem;
+    box-shadow: 0 1.5rem 4rem rgba(25, 35, 45, 0.12);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.service-installation-image:hover img {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 2rem 4.5rem rgba(25, 35, 45, 0.17);
+}
+
+/* IMAGE BADGE */
+
+.service-installation-image-badge {
+    position: absolute;
+    z-index: 2;
+    left: 2rem;
+    right: 2rem;
+    bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 1.6rem 1.8rem;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 1rem;
+    box-shadow: 0 0.8rem 2.5rem rgba(20, 30, 40, 0.12);
+    backdrop-filter: blur(1rem);
+}
+
+.service-installation-badge-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.8rem;
+    height: 4.8rem;
+    color: #ffffff;
+    background: #d62828;
+    border-radius: 0.8rem;
+    font-size: 2rem;
+    transition: transform 0.4s ease;
+}
+
+.service-installation-image:hover .service-installation-badge-icon {
+    transform: rotate(-8deg) scale(1.06);
+}
+
+.service-installation-image-badge div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.service-installation-image-badge strong {
+    color: #292b2d;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+.service-installation-image-badge div span {
+    color: #747a80;
+    font-size: 1.2rem;
+}
+
+/* CONTENT */
+
+.service-installation-content {
+    min-width: 0;
+}
+
+.service-installation-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.6rem;
+    color: #d62828;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.18rem;
+}
+
+.service-installation-eyebrow-line {
+    display: inline-block;
+    width: 3.2rem;
+    height: 2px;
+    background: #d62828;
+}
+
+.service-installation-content h2 {
+    margin: 0 0 1.8rem;
+    color: #292b2d;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(2.8rem, 3.2vw, 4rem);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.08rem;
+}
+
+.service-installation-content h2 span {
+    color: #d62828;
+}
+
+.service-installation-description {
+    margin: 0 0 2.8rem;
+    color: #737980;
+    font-size: 1.5rem;
+    line-height: 1.9;
+}
+
+/* SERVICE POINTS */
+
+.service-installation-points {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.service-installation-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #edf0f3;
+    border-radius: 0.9rem;
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.service-installation-point:hover {
+    background: #ffffff;
+    border-color: rgba(214, 40, 40, 0.25);
+    transform: translateX(0.5rem);
+    box-shadow: 0 0.8rem 2.2rem rgba(35, 45, 55, 0.06);
+}
+
+.service-installation-point-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    color: #d62828;
+    background: rgba(214, 40, 40, 0.08);
+    border-radius: 0.8rem;
+    font-size: 1.8rem;
+    transition:
+        color 0.35s ease,
+        background 0.35s ease,
+        transform 0.35s ease;
+}
+
+.service-installation-point:hover .service-installation-point-icon {
+    color: #ffffff;
+    background: #d62828;
+    transform: rotate(-6deg) scale(1.04);
+}
+
+.service-installation-point h3 {
+    margin: 0 0 0.6rem;
+    color: #292b2d;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.service-installation-point p {
+    margin: 0;
+    color: #737980;
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+/* BUTTON */
+
+.service-installation-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-decoration: none;
+}
+
+.service-installation-btn i {
+    transition: transform 0.3s ease;
+}
+
+.service-installation-btn:hover i {
+    transform: translateX(0.4rem);
+}
+
+/* AVAILABILITY NOTE */
+
+.service-installation-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin: 1.8rem 0 0;
+    color: #858b91;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.service-installation-note i {
+    margin-top: 0.3rem;
+    color: #d62828;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 992px) {
+    .service-installation-section {
+        padding: 7rem 5%;
+    }
+
+    .service-installation-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3.5rem;
+    }
+
+    .service-installation-image img {
+        height: 40rem;
+    }
+
+    .service-installation-content h2 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-installation-section {
+        padding: 6rem 2rem;
+    }
+
+    .service-installation-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .service-installation-image {
+        max-width: 55rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .service-installation-image img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .service-installation-content h2 {
+        font-size: 3.2rem;
+    }
+
+    .service-installation-description {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-installation-section {
+        padding: 5rem 1.8rem;
+    }
+
+    .service-installation-image::before {
+        top: -0.8rem;
+        left: -0.8rem;
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .service-installation-image-badge {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        gap: 1rem;
+        padding: 1.2rem;
+    }
+
+    .service-installation-badge-icon {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.7rem;
+    }
+
+    .service-installation-image-badge strong {
+        font-size: 1.25rem;
+    }
+
+    .service-installation-image-badge div span {
+        font-size: 1.1rem;
+    }
+
+    .service-installation-content h2 {
+        font-size: 2.7rem;
+    }
+
+    .service-installation-point {
+        gap: 1.2rem;
+        padding: 1.2rem;
+    }
+
+    .service-installation-point-icon {
+        width: 3.8rem;
+        height: 3.8rem;
+        font-size: 1.6rem;
+    }
+
+    .service-installation-point h3 {
+        font-size: 1.35rem;
+    }
+
+    .service-installation-point p {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ==========================================
+   SERVICE 02: CALIBRATION & TESTING
+========================================== */
+
+.calibration-service-section {
+    position: relative;
+    padding: 100px 6%;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.calibration-service-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    align-items: center;
+    gap: 75px;
+}
+
+/* ==========================================
+   LEFT VISUAL
+========================================== */
+
+.calibration-service-visual {
+    position: relative;
+    min-width: 0;
+}
+
+.calibration-image-frame {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    max-height: 590px;
+    border-radius: 18px;
+    background: #f1f3f5;
+    box-shadow: 0 18px 50px rgba(30, 35, 40, 0.09);
+}
+
+.calibration-image-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border: 1px solid rgba(214, 40, 40, 0.12);
+    border-radius: inherit;
+    pointer-events: none;
+    transition: border-color 0.35s ease;
+}
+
+.calibration-image-frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: inherit;
+    transition:
+        transform 0.8s cubic-bezier(0.2, 0.65, 0.3, 1),
+        filter 0.5s ease;
+}
+
+.calibration-service-visual:hover .calibration-image-frame img {
+    transform: scale(1.035);
+    filter: saturate(1.06);
+}
+
+.calibration-service-visual:hover .calibration-image-frame::before {
+    border-color: rgba(214, 40, 40, 0.65);
+}
+
+/* Decorative corners */
+
+.calibration-corner {
+    position: absolute;
+    z-index: 2;
+    width: 85px;
+    height: 85px;
+    pointer-events: none;
+    transition:
+        width 0.4s ease,
+        height 0.4s ease;
+}
+
+.calibration-corner-top {
+    top: -9px;
+    left: -9px;
+    border-top: 3px solid #d62828;
+    border-left: 3px solid #d62828;
+    border-top-left-radius: 13px;
+}
+
+.calibration-corner-bottom {
+    right: -9px;
+    bottom: -9px;
+    border-right: 3px solid #d62828;
+    border-bottom: 3px solid #d62828;
+    border-bottom-right-radius: 13px;
+}
+
+.calibration-service-visual:hover .calibration-corner {
+    width: 105px;
+    height: 105px;
+}
+
+/* Floating image badge */
+
+.calibration-image-badge {
+    position: absolute;
+    z-index: 3;
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 17px 19px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(230, 233, 237, 0.9);
+    border-radius: 13px;
+    box-shadow: 0 12px 35px rgba(25, 30, 35, 0.12);
+    backdrop-filter: blur(12px);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.calibration-service-visual:hover .calibration-image-badge {
+    transform: translateY(-5px);
+    box-shadow: 0 17px 40px rgba(25, 30, 35, 0.16);
+}
+
+.calibration-badge-icon {
+    flex-shrink: 0;
+    width: 49px;
+    height: 49px;
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    background: #d62828;
+    border-radius: 11px;
+    font-size: 1.8rem;
+}
+
+.calibration-image-badge strong,
+.calibration-image-badge span:last-child {
+    display: block;
+}
+
+.calibration-image-badge strong {
+    color: #292b2d;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+.calibration-image-badge div>span {
+    margin-top: 5px;
+    color: #7b828a;
+    font-size: 1.25rem;
+}
+
+.calibration-visual-caption {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: 24px;
+    color: #777e86;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+}
+
+.calibration-caption-line {
+    width: 35px;
+    height: 2px;
+    flex-shrink: 0;
+    background: #d62828;
+}
+
+/* ==========================================
+   RIGHT CONTENT
+========================================== */
+
+.calibration-service-content {
+    min-width: 0;
+}
+
+.calibration-service-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: #d62828;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.calibration-eyebrow-line {
+    width: 35px;
+    height: 2px;
+    background: #d62828;
+}
+
+.calibration-service-content h2 {
+    margin: 0 0 20px;
+    color: #292b2d;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(3.2rem, 3.5vw, 4.6rem);
+    font-weight: 600;
+    line-height: 1.22;
+    letter-spacing: -1.5px;
+}
+
+.calibration-service-content h2 span {
+    display: block;
+    color: #d62828;
+}
+
+.calibration-service-description {
+    margin: 0 0 30px;
+    color: #737b84;
+    font-size: 1.55rem;
+    line-height: 1.9;
+}
+
+/* ==========================================
+   SERVICE POINTS
+========================================== */
+
+.calibration-service-points {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-bottom: 28px;
+}
+
+.calibration-point {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 17px 45px 17px 17px;
+    overflow: hidden;
+    background: #f7f8fa;
+    border: 1px solid #e9edf1;
+    border-radius: 12px;
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1),
+        box-shadow 0.35s ease;
+}
+
+.calibration-point::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: #d62828;
+    transition: height 0.35s ease;
+}
+
+.calibration-point:hover {
+    transform: translateX(5px);
+    background: #ffffff;
+    border-color: rgba(214, 40, 40, 0.2);
+    box-shadow: 0 9px 24px rgba(35, 40, 45, 0.06);
+}
+
+.calibration-point:hover::before {
+    height: 100%;
+}
+
+/* Unique icon motion for each point */
+
+.calibration-point-icon {
+    position: relative;
+    isolation: isolate;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    color: #d62828;
+    background: #f9e9e9;
+    border-radius: 12px;
+    font-size: 1.9rem;
+    transition:
+        color 0.35s ease,
+        background 0.35s ease,
+        border-radius 0.4s ease,
+        transform 0.45s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+.calibration-point-icon i {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+/* Icon 01: rotating target */
+
+.calibration-icon-target:hover,
+.calibration-point:hover .calibration-icon-target {
+    color: #ffffff;
+    background: #d62828;
+    border-radius: 50%;
+    transform: rotate(-8deg) scale(1.06);
+}
+
+.calibration-point:hover .calibration-icon-target i {
+    transform: rotate(45deg) scale(1.08);
+}
+
+/* Icon 02: rising chart */
+
+.calibration-icon-chart:hover,
+.calibration-point:hover .calibration-icon-chart {
+    color: #ffffff;
+    background: #d62828;
+    border-radius: 9px;
+    transform: translateY(-3px);
+}
+
+.calibration-point:hover .calibration-icon-chart i {
+    transform: translateY(-3px) scale(1.13);
+}
+
+/* Icon 03: shield tilt */
+
+.calibration-icon-shield:hover,
+.calibration-point:hover .calibration-icon-shield {
+    color: #ffffff;
+    background: #d62828;
+    border-radius: 50% 50% 12px 12px;
+    transform: rotate(6deg) scale(1.05);
+}
+
+.calibration-point:hover .calibration-icon-shield i {
+    transform: scale(1.12) rotate(-6deg);
+}
+
+.calibration-point-content {
+    min-width: 0;
+}
+
+.calibration-point-content h3 {
+    margin: 0 0 6px;
+    color: #303438;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.calibration-point-content p {
+    margin: 0;
+    color: #7a818a;
+    font-size: 1.3rem;
+    line-height: 1.7;
+}
+
+.calibration-point-number {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    color: #d7dade;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    transform: translateY(-50%);
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.calibration-point:hover .calibration-point-number {
+    color: #d62828;
+    transform: translateY(-50%) scale(1.12);
+}
+
+/* ==========================================
+   ENQUIRY BUTTON
+========================================== */
+
+.calibration-service-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 52px;
+    padding: 7px 8px 7px 22px;
+    color: #ffffff;
+    background: #d62828;
+    border: 1px solid #d62828;
+    border-radius: 8px;
+    font-size: 1.35rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.calibration-service-btn:hover {
+    color: #ffffff;
+    background: #ad1f24;
+    box-shadow: 0 9px 22px rgba(214, 40, 40, 0.2);
+    transform: translateY(-2px);
+}
+
+.calibration-btn-icon {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    color: #d62828;
+    background: #ffffff;
+    border-radius: 6px;
+    transition:
+        transform 0.35s ease,
+        border-radius 0.35s ease;
+}
+
+.calibration-service-btn:hover .calibration-btn-icon {
+    transform: translateX(3px) rotate(-5deg);
+    border-radius: 50%;
+}
+
+.calibration-service-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 18px 0 0;
+    color: #858b92;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.calibration-service-note i {
+    margin-top: 4px;
+    color: #d62828;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1050px) {
+    .calibration-service-section {
+        padding: 80px 5%;
+    }
+
+    .calibration-service-container {
+        gap: 45px;
+    }
+
+    .calibration-service-content h2 {
+        font-size: 3.6rem;
+    }
+
+    .calibration-point {
+        padding: 15px 38px 15px 14px;
+        gap: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calibration-service-section {
+        padding: 65px 6%;
+    }
+
+    .calibration-service-container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        max-width: 560px;
+    }
+
+    .calibration-service-visual {
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    .calibration-image-frame {
+        aspect-ratio: 4 / 4.2;
+    }
+
+    .calibration-service-content h2 {
+        font-size: clamp(3rem, 7vw, 3.8rem);
+        letter-spacing: -1px;
+    }
+
+    .calibration-service-description {
+        font-size: 1.45rem;
+        line-height: 1.8;
+    }
+
+    .calibration-point-content h3 {
+        font-size: 1.35rem;
+    }
+
+    .calibration-point-content p {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .calibration-service-section {
+        padding: 52px 5%;
+    }
+
+    .calibration-service-container {
+        gap: 38px;
+    }
+
+    .calibration-image-badge {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        gap: 11px;
+        padding: 13px;
+    }
+
+    .calibration-badge-icon {
+        width: 43px;
+        height: 43px;
+        font-size: 1.6rem;
+    }
+
+    .calibration-image-badge strong {
+        font-size: 1.25rem;
+    }
+
+    .calibration-image-badge div>span {
+        font-size: 1.1rem;
+    }
+
+    .calibration-visual-caption {
+        font-size: 0.95rem;
+        letter-spacing: 1.2px;
+    }
+
+    .calibration-service-eyebrow {
+        font-size: 1.1rem;
+    }
+
+    .calibration-service-content h2 {
+        font-size: 3rem;
+    }
+
+    .calibration-point {
+        gap: 11px;
+        padding: 14px 32px 14px 12px;
+    }
+
+    .calibration-point-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.6rem;
+    }
+
+    .calibration-point-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .calibration-point-content p {
+        font-size: 1.15rem;
+    }
+
+    .calibration-point-number {
+        right: 9px;
+        font-size: 1rem;
+    }
+
+    .calibration-service-btn {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .calibration-service-section *,
+    .calibration-service-section *::before,
+    .calibration-service-section *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* =========================================
+   SERVICE 03: MAINTENANCE & REPAIR
+========================================= */
+
+.service-maintenance-section {
+    position: relative;
+    overflow: hidden;
+    padding: 90px 5%;
+    background: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+.service-maintenance-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: center;
+    gap: 65px;
+}
+
+/* LEFT VISUAL */
+
+.service-maintenance-visual {
+    position: relative;
+    min-width: 0;
+    padding: 16px;
+}
+
+.service-maintenance-image-frame {
+    position: relative;
+    height: 530px;
+    overflow: hidden;
+    border: 1px solid #e6e8eb;
+    border-radius: 20px;
+    background: #f1f3f5;
+    box-shadow: 0 20px 55px rgba(25, 35, 45, 0.09);
+}
+
+.service-maintenance-image-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.service-maintenance-image-frame:hover img {
+    transform: scale(1.045);
+}
+
+.service-maintenance-image-overlay {
+    position: absolute;
+    inset: 40% 0 0;
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(20, 24, 29, 0.62));
+    pointer-events: none;
+}
+
+.service-maintenance-corner {
+    position: absolute;
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+    border-color: #d62828;
+    border-style: solid;
+    pointer-events: none;
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.service-maintenance-corner-top {
+    top: 0;
+    left: 0;
+    border-width: 3px 0 0 3px;
+    border-radius: 14px 0 0 0;
+}
+
+.service-maintenance-corner-bottom {
+    right: 0;
+    bottom: 0;
+    border-width: 0 3px 3px 0;
+    border-radius: 0 0 14px 0;
+}
+
+.service-maintenance-visual:hover .service-maintenance-corner {
+    width: 125px;
+    height: 125px;
+}
+
+/* FLOATING IMAGE CARD */
+
+.service-maintenance-image-card {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(12px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-maintenance-image-frame:hover .service-maintenance-image-card {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+}
+
+.service-maintenance-card-icon {
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: #d62828;
+    color: #ffffff;
+    font-size: 21px;
+}
+
+.service-maintenance-image-card h3 {
+    margin: 0 0 6px;
+    color: #292b2d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.service-maintenance-image-card p {
+    margin: 0;
+    color: #7b838c;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* RIGHT CONTENT */
+
+.service-maintenance-content {
+    min-width: 0;
+}
+
+.service-maintenance-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: #d62828;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.service-maintenance-eyebrow-line {
+    display: inline-block;
+    width: 32px;
+    height: 2px;
+    background: #d62828;
+}
+
+.service-maintenance-content h2 {
+    margin: 0 0 22px;
+    color: #292b2d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(32px, 3.4vw, 46px);
+    font-weight: 650;
+    line-height: 1.2;
+    letter-spacing: -1.4px;
+}
+
+.service-maintenance-content h2 span {
+    display: block;
+    color: #d62828;
+}
+
+.service-maintenance-description {
+    margin: 0 0 28px;
+    color: #777f89;
+    font-size: 15.5px;
+    line-height: 1.95;
+}
+
+/* SERVICE CARDS */
+
+.service-maintenance-list {
+    display: grid;
+    gap: 14px;
+}
+
+.service-maintenance-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 17px 18px;
+    overflow: hidden;
+    border: 1px solid #e7eaf0;
+    border-radius: 13px;
+    background: #f7f8fa;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.service-maintenance-item::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    content: "";
+    background: #d62828;
+    transition: height 0.35s ease;
+}
+
+.service-maintenance-item:hover {
+    transform: translateX(5px);
+    border-color: #f0caca;
+    background: #ffffff;
+    box-shadow: 0 10px 28px rgba(34, 40, 48, 0.065);
+}
+
+.service-maintenance-item:hover::before {
+    height: 100%;
+}
+
+/* ICON BASE */
+
+.service-maintenance-icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 13px;
+    background: #f9e8e9;
+    color: #d62828;
+    font-size: 20px;
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        border-radius 0.35s ease,
+        transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.service-maintenance-icon i {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s ease;
+}
+
+/* UNIQUE ICON MOTION 01: TOOL ROTATION */
+
+.maintenance-item-one:hover .maintenance-icon-tools {
+    transform: rotate(-8deg);
+    border-radius: 50%;
+    background: #d62828;
+    color: #ffffff;
+}
+
+.maintenance-item-one:hover .maintenance-icon-tools i {
+    transform: rotate(35deg) scale(1.12);
+}
+
+/* UNIQUE ICON MOTION 02: SEARCH SWEEP */
+
+.maintenance-item-two:hover .maintenance-icon-search {
+    background: #d62828;
+    color: #ffffff;
+    transform: scale(1.07);
+}
+
+.maintenance-item-two:hover .maintenance-icon-search i {
+    transform: translate(3px, -3px) rotate(-8deg);
+}
+
+/* UNIQUE ICON MOTION 03: GEAR ROTATION */
+
+.maintenance-item-three:hover .maintenance-icon-gear {
+    border-radius: 50%;
+    background: #d62828;
+    color: #ffffff;
+    transform: rotate(12deg);
+}
+
+.maintenance-item-three:hover .maintenance-icon-gear i {
+    transform: rotate(-45deg) scale(1.08);
+}
+
+/* CARD TEXT */
+
+.service-maintenance-item-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.service-maintenance-item-content h3 {
+    margin: 0 0 7px;
+    color: #34383d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.service-maintenance-item-content p {
+    margin: 0;
+    color: #7b838d;
+    font-size: 13.5px;
+    line-height: 1.7;
+}
+
+.service-maintenance-number {
+    flex-shrink: 0;
+    color: #c9cdd3;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.service-maintenance-item:hover .service-maintenance-number {
+    color: #d62828;
+    transform: translateX(-3px);
+}
+
+/* AVAILABILITY NOTE */
+
+.service-maintenance-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-top: 20px;
+    padding: 14px 16px;
+    border-left: 3px solid #d62828;
+    border-radius: 0 8px 8px 0;
+    background: #fff6f6;
+}
+
+.service-maintenance-note>i {
+    margin-top: 3px;
+    color: #d62828;
+    font-size: 15px;
+}
+
+.service-maintenance-note p {
+    margin: 0;
+    color: #747b84;
+    font-size: 12.5px;
+    line-height: 1.75;
+}
+
+/* CTA BUTTON */
+
+.service-maintenance-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 52px;
+    margin-top: 24px;
+    padding: 7px 8px 7px 22px;
+    border: 1px solid #d62828;
+    border-radius: 7px;
+    background: #d62828;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.service-maintenance-btn:hover {
+    border-color: #ad1f24;
+    background: #ad1f24;
+    box-shadow: 0 8px 22px rgba(214, 40, 40, 0.2);
+}
+
+.service-maintenance-btn-icon {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.17);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.service-maintenance-btn:hover .service-maintenance-btn-icon {
+    transform: translateX(3px);
+    background: rgba(255, 255, 255, 0.27);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+    .service-maintenance-container {
+        gap: 35px;
+    }
+
+    .service-maintenance-image-frame {
+        height: 470px;
+    }
+
+    .service-maintenance-content h2 {
+        font-size: 36px;
+    }
+
+    .service-maintenance-item {
+        gap: 13px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-maintenance-section {
+        padding: 65px 5%;
+    }
+
+    .service-maintenance-container {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .service-maintenance-visual {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .service-maintenance-image-frame {
+        height: 420px;
+    }
+
+    .service-maintenance-content h2 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-maintenance-section {
+        padding: 48px 4%;
+    }
+
+    .service-maintenance-visual {
+        padding: 10px;
+    }
+
+    .service-maintenance-image-frame {
+        height: 340px;
+        border-radius: 15px;
+    }
+
+    .service-maintenance-image-card {
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        gap: 12px;
+        padding: 13px;
+    }
+
+    .service-maintenance-card-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .service-maintenance-image-card h3 {
+        font-size: 14px;
+    }
+
+    .service-maintenance-image-card p {
+        font-size: 12px;
+    }
+
+    .service-maintenance-content h2 {
+        font-size: 30px;
+        letter-spacing: -0.8px;
+    }
+
+    .service-maintenance-description {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .service-maintenance-item {
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 12px;
+    }
+
+    .service-maintenance-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 17px;
+    }
+
+    .service-maintenance-item-content h3 {
+        font-size: 13.5px;
+    }
+
+    .service-maintenance-item-content p {
+        font-size: 12px;
+    }
+
+    .service-maintenance-number {
+        font-size: 10px;
+    }
+
+    .service-maintenance-note {
+        padding: 12px;
+    }
+
+    .service-maintenance-btn {
+        width: 100%;
+        font-size: 13px;
+    }
+}
+
+/* ACCESSIBILITY: REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .service-maintenance-section *,
+    .service-maintenance-section *::before,
+    .service-maintenance-section *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================
+   SERVICE 04: TECHNICAL SUPPORT
+========================================= */
+
+.technical-support-section {
+    position: relative;
+    overflow: hidden;
+    padding: 90px 5%;
+    background: #f8f9fb;
+    font-family: 'Inter', sans-serif;
+}
+
+.technical-support-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: center;
+    gap: 65px;
+}
+
+
+/* =========================================
+   LEFT VISUAL
+========================================= */
+
+.technical-support-visual {
+    position: relative;
+    min-width: 0;
+    padding: 16px;
+}
+
+.technical-support-image-frame {
+    position: relative;
+    height: 530px;
+    overflow: hidden;
+    border: 1px solid #e3e7ed;
+    border-radius: 20px;
+    background: #edf0f4;
+    box-shadow: 0 20px 55px rgba(25, 35, 45, 0.08);
+}
+
+.technical-support-image-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.technical-support-image-frame:hover img {
+    transform: scale(1.045);
+}
+
+.technical-support-image-overlay {
+    position: absolute;
+    inset: 45% 0 0;
+    background: linear-gradient(to bottom,
+            transparent,
+            rgba(22, 27, 33, 0.65));
+    pointer-events: none;
+}
+
+
+/* CORNER DECORATION */
+
+.technical-support-corner {
+    position: absolute;
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+    border-color: #d62828;
+    border-style: solid;
+    pointer-events: none;
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.technical-support-corner-top {
+    top: 0;
+    left: 0;
+    border-width: 3px 0 0 3px;
+    border-radius: 14px 0 0 0;
+}
+
+.technical-support-corner-bottom {
+    right: 0;
+    bottom: 0;
+    border-width: 0 3px 3px 0;
+    border-radius: 0 0 14px 0;
+}
+
+.technical-support-visual:hover .technical-support-corner {
+    width: 125px;
+    height: 125px;
+}
+
+
+/* FLOATING IMAGE CARD */
+
+.technical-support-image-card {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(12px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.technical-support-image-frame:hover .technical-support-image-card {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+.technical-support-card-icon {
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: #d62828;
+    color: #ffffff;
+    font-size: 21px;
+}
+
+.technical-support-image-card h3 {
+    margin: 0 0 6px;
+    color: #292b2d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.technical-support-image-card p {
+    margin: 0;
+    color: #7b838c;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   RIGHT CONTENT
+========================================= */
+
+.technical-support-content {
+    min-width: 0;
+}
+
+.technical-support-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: #d62828;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.technical-support-eyebrow-line {
+    display: inline-block;
+    width: 32px;
+    height: 2px;
+    background: #d62828;
+}
+
+.technical-support-content h2 {
+    margin: 0 0 22px;
+    color: #292b2d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(32px, 3.4vw, 46px);
+    font-weight: 650;
+    line-height: 1.2;
+    letter-spacing: -1.4px;
+}
+
+.technical-support-content h2 span {
+    display: block;
+    color: #d62828;
+}
+
+.technical-support-description {
+    margin: 0 0 28px;
+    color: #777f89;
+    font-size: 15.5px;
+    line-height: 1.95;
+}
+
+
+/* =========================================
+   SUPPORT CARDS
+========================================= */
+
+.technical-support-list {
+    display: grid;
+    gap: 14px;
+}
+
+.technical-support-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 17px 18px;
+    overflow: hidden;
+    border: 1px solid #e5e9ef;
+    border-radius: 13px;
+    background: #ffffff;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.technical-support-item::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    content: "";
+    background: #d62828;
+    transition: height 0.35s ease;
+}
+
+.technical-support-item:hover {
+    transform: translateX(5px);
+    border-color: #f0caca;
+    box-shadow: 0 10px 28px rgba(34, 40, 48, 0.065);
+}
+
+.technical-support-item:hover::before {
+    height: 100%;
+}
+
+
+/* ICON BASE */
+
+.technical-support-icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 13px;
+    background: #f9e8e9;
+    color: #d62828;
+    font-size: 20px;
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        border-radius 0.35s ease,
+        transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.technical-support-icon i {
+    transition: transform 0.4s ease;
+}
+
+
+/* ICON 01: BALANCE SCALE TILT */
+
+.support-item-selection:hover .technical-icon-selection {
+    background: #d62828;
+    color: #ffffff;
+    border-radius: 50%;
+    transform: rotate(-10deg);
+}
+
+.support-item-selection:hover .technical-icon-selection i {
+    transform: rotate(20deg) scale(1.1);
+}
+
+
+/* ICON 02: BOOK OPEN */
+
+.support-item-guidance:hover .technical-icon-guidance {
+    background: #d62828;
+    color: #ffffff;
+    transform: perspective(300px) rotateY(180deg);
+}
+
+.support-item-guidance:hover .technical-icon-guidance i {
+    transform: rotateY(-180deg);
+}
+
+
+/* ICON 03: CHAT BOUNCE */
+
+.support-item-enquiry:hover .technical-icon-enquiry {
+    background: #d62828;
+    color: #ffffff;
+    border-radius: 50% 50% 50% 12px;
+    transform: translateY(-4px);
+}
+
+.support-item-enquiry:hover .technical-icon-enquiry i {
+    transform: scale(1.12) rotate(-8deg);
+}
+
+
+/* CARD TEXT */
+
+.technical-support-item-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.technical-support-item-content h3 {
+    margin: 0 0 7px;
+    color: #34383d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.technical-support-item-content p {
+    margin: 0;
+    color: #7b838d;
+    font-size: 13.5px;
+    line-height: 1.7;
+}
+
+.technical-support-number {
+    flex-shrink: 0;
+    color: #c9cdd3;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.technical-support-item:hover .technical-support-number {
+    color: #d62828;
+    transform: translateX(-3px);
+}
+
+
+/* =========================================
+   AVAILABILITY NOTE
+========================================= */
+
+.technical-support-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-top: 20px;
+    padding: 14px 16px;
+    border-left: 3px solid #d62828;
+    border-radius: 0 8px 8px 0;
+    background: #fff5f5;
+}
+
+.technical-support-note>i {
+    margin-top: 3px;
+    color: #d62828;
+    font-size: 15px;
+}
+
+.technical-support-note p {
+    margin: 0;
+    color: #747b84;
+    font-size: 12.5px;
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   CTA BUTTON
+========================================= */
+
+.technical-support-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 52px;
+    margin-top: 24px;
+    padding: 7px 8px 7px 22px;
+    border: 1px solid #d62828;
+    border-radius: 7px;
+    background: #d62828;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.technical-support-btn:hover {
+    border-color: #ad1f24;
+    background: #ad1f24;
+    box-shadow: 0 8px 22px rgba(214, 40, 40, 0.2);
+}
+
+.technical-support-btn-icon {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.17);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.technical-support-btn:hover .technical-support-btn-icon {
+    transform: translateX(3px);
+    background: rgba(255, 255, 255, 0.27);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1024px) {
+
+    .technical-support-container {
+        gap: 35px;
+    }
+
+    .technical-support-image-frame {
+        height: 470px;
+    }
+
+    .technical-support-content h2 {
+        font-size: 36px;
+    }
+
+    .technical-support-item {
+        gap: 13px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .technical-support-section {
+        padding: 65px 5%;
+    }
+
+    .technical-support-container {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .technical-support-visual {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .technical-support-image-frame {
+        height: 420px;
+    }
+
+    .technical-support-content h2 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .technical-support-section {
+        padding: 48px 4%;
+    }
+
+    .technical-support-visual {
+        padding: 10px;
+    }
+
+    .technical-support-image-frame {
+        height: 340px;
+        border-radius: 15px;
+    }
+
+    .technical-support-image-card {
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        gap: 12px;
+        padding: 13px;
+    }
+
+    .technical-support-card-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .technical-support-image-card h3 {
+        font-size: 14px;
+    }
+
+    .technical-support-image-card p {
+        font-size: 12px;
+    }
+
+    .technical-support-content h2 {
+        font-size: 30px;
+        letter-spacing: -0.8px;
+    }
+
+    .technical-support-description {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .technical-support-item {
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 12px;
+    }
+
+    .technical-support-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 17px;
+    }
+
+    .technical-support-item-content h3 {
+        font-size: 13.5px;
+    }
+
+    .technical-support-item-content p {
+        font-size: 12px;
+    }
+
+    .technical-support-number {
+        font-size: 10px;
+    }
+
+    .technical-support-note {
+        padding: 12px;
+    }
+
+    .technical-support-btn {
+        width: 100%;
+        font-size: 13px;
+    }
+}
+
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .technical-support-section *,
+    .technical-support-section *::before,
+    .technical-support-section *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================
+   SERVICES FINAL CTA — PRIME SYSTEMS
+========================================= */
+
+.services-final-cta {
+    position: relative;
+    padding: 8rem 5%;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.services-final-cta .weighing-enquiry-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 5rem;
+    max-width: 124rem;
+    margin: 0 auto;
+    padding: 5.5rem 6rem;
+    border: 1px solid rgba(214, 40, 40, 0.12);
+    border-radius: 2.4rem;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(214, 40, 40, 0.07), transparent 32%),
+        linear-gradient(135deg, #ffffff 0%, #f7f8fa 100%);
+    box-shadow: 0 2rem 6rem rgba(28, 30, 32, 0.07);
+    overflow: hidden;
+}
+
+/* Subtle decorative background */
+.services-final-cta .weighing-enquiry-container::before {
+    content: "";
+    position: absolute;
+    top: -12rem;
+    left: -10rem;
+    width: 28rem;
+    height: 28rem;
+    border: 1px solid rgba(214, 40, 40, 0.09);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.services-final-cta .weighing-enquiry-container::after {
+    content: "";
+    position: absolute;
+    bottom: -0.4rem;
+    left: 6rem;
+    width: 9rem;
+    height: 0.3rem;
+    background: #d62828;
+    border-radius: 1rem;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.services-final-cta .weighing-enquiry-content {
+    position: relative;
+    z-index: 2;
+}
+
+.services-final-cta .weighing-enquiry-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.1rem;
+    margin-bottom: 2rem;
+    color: #d62828;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    line-height: 1.6;
+}
+
+.services-final-cta .weighing-enquiry-eyebrow-line {
+    display: inline-block;
+    width: 3.5rem;
+    height: 0.2rem;
+    background: #d62828;
+    border-radius: 1rem;
+}
+
+.services-final-cta .weighing-enquiry-content h2 {
+    max-width: 65rem;
+    margin: 0 0 1.8rem;
+    color: #292b2d;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(3rem, 3.5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.22;
+    letter-spacing: -0.12rem;
+}
+
+.services-final-cta .weighing-enquiry-content h2 span {
+    display: block;
+    color: #d62828;
+}
+
+.services-final-cta .weighing-enquiry-content p {
+    max-width: 62rem;
+    margin: 0;
+    color: #737b84;
+    font-size: 1.55rem;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.services-final-cta .weighing-enquiry-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.services-final-cta .weighing-enquiry-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    min-height: 5.2rem;
+    padding: 1.4rem 2.5rem;
+    border: 1px solid #d62828;
+    border-radius: 0.8rem;
+    background: #d62828;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 0.8rem 1.8rem rgba(214, 40, 40, 0.16);
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.services-final-cta .weighing-enquiry-actions .btn i {
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.services-final-cta .weighing-enquiry-actions .btn:hover {
+    background: #ad1f24;
+    border-color: #ad1f24;
+    box-shadow: 0 1.2rem 2.5rem rgba(214, 40, 40, 0.23);
+    transform: translateY(-0.3rem);
+}
+
+.services-final-cta .weighing-enquiry-actions .btn:hover i {
+    transform: translateX(0.4rem);
+}
+
+.services-final-cta .weighing-enquiry-call {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    color: #292b2d;
+    text-decoration: none;
+}
+
+.services-final-cta .weighing-enquiry-call-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 4.8rem;
+    height: 4.8rem;
+    border: 1px solid rgba(214, 40, 40, 0.14);
+    border-radius: 1.2rem;
+    background: rgba(214, 40, 40, 0.07);
+    color: #d62828;
+    font-size: 1.7rem;
+    transition:
+        color 0.35s ease,
+        background 0.35s ease,
+        border-radius 0.35s ease,
+        transform 0.35s ease;
+}
+
+.services-final-cta .weighing-enquiry-call:hover .weighing-enquiry-call-icon {
+    color: #ffffff;
+    background: #d62828;
+    border-radius: 50%;
+    transform: rotate(-12deg) scale(1.05);
+}
+
+.services-final-cta .weighing-enquiry-call span:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.services-final-cta .weighing-enquiry-call small {
+    color: #818891;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.services-final-cta .weighing-enquiry-call strong {
+    color: #292b2d;
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: 0.02rem;
+    transition: color 0.3s ease;
+}
+
+.services-final-cta .weighing-enquiry-call:hover strong {
+    color: #d62828;
+}
+
+/* =========================================
+   VISUAL PANEL
+========================================= */
+
+.services-final-cta .services-final-cta-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 32rem;
+    border: 1px solid rgba(214, 40, 40, 0.12);
+    border-radius: 2rem;
+    background:
+        radial-gradient(circle at 50% 40%, rgba(214, 40, 40, 0.11), transparent 48%),
+        linear-gradient(145deg, #ffffff 0%, #f0f2f5 100%);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.services-final-cta .services-final-cta-visual::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 24rem;
+    height: 24rem;
+    border: 1px solid rgba(214, 40, 40, 0.12);
+    border-radius: 50%;
+    transition: transform 0.7s ease;
+}
+
+.services-final-cta .services-final-cta-visual::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 17rem;
+    height: 17rem;
+    border: 1px dashed rgba(214, 40, 40, 0.2);
+    border-radius: 50%;
+    transition: transform 0.7s ease;
+}
+
+.services-final-cta .services-final-cta-visual:hover::before {
+    transform: scale(1.15);
+}
+
+.services-final-cta .services-final-cta-visual:hover::after {
+    transform: scale(1.2) rotate(35deg);
+}
+
+.services-final-cta .weighing-enquiry-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid rgba(214, 40, 40, 0.12);
+    border-radius: 2.6rem;
+    background: #d62828;
+    color: #ffffff;
+    font-size: 4rem;
+    box-shadow: 0 1.5rem 3rem rgba(214, 40, 40, 0.22);
+    transition:
+        transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-radius 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.services-final-cta .services-final-cta-visual:hover .weighing-enquiry-icon {
+    transform: translateY(-0.7rem) rotate(-8deg) scale(1.06);
+    border-radius: 50%;
+    box-shadow: 0 2rem 4rem rgba(214, 40, 40, 0.3);
+}
+
+.services-final-cta .weighing-enquiry-visual-label {
+    margin-top: 2.5rem;
+    color: #555d65;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.17rem;
+    text-align: center;
+}
+
+/* =========================================
+   FLOATING ICONS
+========================================= */
+
+.services-final-cta .services-cta-floating-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.2rem;
+    height: 5.2rem;
+    border: 1px solid rgba(214, 40, 40, 0.12);
+    border-radius: 1.5rem;
+    background: #ffffff;
+    color: #d62828;
+    font-size: 1.9rem;
+    box-shadow: 0 1rem 2.5rem rgba(28, 30, 32, 0.1);
+    transition:
+        transform 0.45s ease,
+        background 0.35s ease,
+        color 0.35s ease,
+        border-radius 0.35s ease;
+}
+
+.services-final-cta .services-cta-icon-one {
+    top: 4rem;
+    left: 3.5rem;
+    animation: servicesFloatOne 4s ease-in-out infinite;
+}
+
+.services-final-cta .services-cta-icon-two {
+    right: 3.5rem;
+    bottom: 4rem;
+    animation: servicesFloatTwo 4.5s ease-in-out infinite;
+}
+
+.services-final-cta .services-cta-floating-icon:hover {
+    color: #ffffff;
+    background: #d62828;
+    border-radius: 50%;
+    transform: rotate(12deg) scale(1.12);
+    animation-play-state: paused;
+}
+
+@keyframes servicesFloatOne {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-0.8rem);
+    }
+}
+
+@keyframes servicesFloatTwo {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(0.7rem) rotate(5deg);
+    }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+    .services-final-cta {
+        padding: 6rem 4%;
+    }
+
+    .services-final-cta .weighing-enquiry-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        padding: 4.5rem;
+    }
+
+    .services-final-cta .weighing-enquiry-content h2 {
+        max-width: 70rem;
+        font-size: 3.8rem;
+    }
+
+    .services-final-cta .services-final-cta-visual {
+        min-height: 28rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-final-cta {
+        padding: 4rem 1.8rem;
+    }
+
+    .services-final-cta .weighing-enquiry-container {
+        gap: 3.5rem;
+        padding: 3rem 2rem;
+        border-radius: 1.8rem;
+    }
+
+    .services-final-cta .weighing-enquiry-content h2 {
+        font-size: 3rem;
+        letter-spacing: -0.07rem;
+    }
+
+    .services-final-cta .weighing-enquiry-content p {
+        font-size: 1.4rem;
+        line-height: 1.8;
+    }
+
+    .services-final-cta .weighing-enquiry-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .services-final-cta .weighing-enquiry-actions .btn {
+        width: 100%;
+    }
+
+    .services-final-cta .services-final-cta-visual {
+        min-height: 25rem;
+    }
+
+    .services-final-cta .weighing-enquiry-icon {
+        width: 8rem;
+        height: 8rem;
+        font-size: 3.2rem;
+    }
+
+    .services-final-cta .services-cta-icon-one {
+        top: 2rem;
+        left: 2rem;
+    }
+
+    .services-final-cta .services-cta-icon-two {
+        right: 2rem;
+        bottom: 2rem;
+    }
+
+    .services-final-cta .weighing-enquiry-visual-label {
+        max-width: 22rem;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-final-cta *,
+    .services-final-cta *::before,
+    .services-final-cta *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
