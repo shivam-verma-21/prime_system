@@ -34,11 +34,11 @@
 
 
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png">
-
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io/favicon-16x16.png">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon_io/favicon-32x32.png">
+    <link rel="icon" href="assets/images/favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicon_io/site.webmanifest">
 
 
     <!-- =========================================
@@ -112,6 +112,8 @@
 
     <!-- SWIPER CSS | KEEP IF USED ON THIS PAGE -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/prime-preloader.css">
+    <script src="js/prime-preloader.js"></script>
 
 
     <!-- =========================================
@@ -158,6 +160,13 @@
 </head>
 
 <body>
+    <div class="prime-preloader" aria-hidden="true">
+        <div class="prime-preloader-orbit">
+            <img class="prime-preloader-logo" src="assets/logo/logo-preloader.png"
+                alt="Prime Systems">
+        </div>
+        <span class="prime-preloader-label">PRIME SYSTEMS</span>
+    </div>
     <div id="header"></div>
 
     <section class="heading about">
@@ -920,7 +929,7 @@
             </div>
         </div>
     </section>
-    
+
     <section>
         <div class="elfsight-app-782eee8b-966b-4d42-8fd5-d3311b724032" data-elfsight-app-lazy></div>
     </section>
