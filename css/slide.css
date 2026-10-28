@@ -568,7 +568,7 @@
                 rgba(20, 22, 24, 0.80),
                 rgba(20, 22, 24, 0.50)
             ),
-            url("../asset/hero/hero-2.png");
+            url("../assets/images/hero/hero-0.png");
     }
 
     .slider-wrapper .slide-2::before {
@@ -578,7 +578,7 @@
                 rgba(20, 22, 24, 0.80),
                 rgba(20, 22, 24, 0.50)
             ),
-            url("../asset/hero/hero-1.png");
+            url("../assets/images/hero/hero-1.png");
     }
 
     .slider-wrapper .slide-3::before {
@@ -588,7 +588,7 @@
                 rgba(20, 22, 24, 0.80),
                 rgba(20, 22, 24, 0.50)
             ),
-            url("../asset/hero/hero-7.png");
+            url("../assets/images/hero/hero-2.png");
     }
 
     .slider-wrapper .slide-4::before {
@@ -598,7 +598,7 @@
                 rgba(20, 22, 24, 0.80),
                 rgba(20, 22, 24, 0.50)
             ),
-            url("../asset/hero/hero-5.png");
+            url("../assets/images/hero/hero-3.png");
     }
 
     .slider-wrapper .slide-5::before {
@@ -608,7 +608,7 @@
                 rgba(20, 22, 24, 0.80),
                 rgba(20, 22, 24, 0.50)
             ),
-            url("../asset/hero/hero-4.png");
+            url("../assets/images/hero/hero-4.png");
     }
 
     .slider-wrapper .slide-6::before {
@@ -618,7 +618,7 @@
                 rgba(20, 22, 24, 0.80),
                 rgba(20, 22, 24, 0.50)
             ),
-            url("../asset/hero/hero-6.png");
+            url("../assets/images/hero/hero-5.png");
     }
 
     .slider-wrapper .slider-item .slide-content {
@@ -668,7 +668,8 @@
         font-size: 11px;
     }
 
-    .wrapper2 :where(.hero-button-prev, .hero-button-next) {
+    .wrapper2 .hero-button-prev,
+    .wrapper2 .hero-button-next {
         display: none;
     }
 
