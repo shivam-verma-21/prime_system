@@ -397,35 +397,138 @@ function initializePage() {
 initializePage();
 initializeHeaderInteractions();
 
-/* ==========================================
-   ENQUIRY FORM INTERACTIONS
-========================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+// ========================================
+// PRIME SYSTEMS — EMAILJS ENQUIRY FORM
+// ========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Replace these with your actual EmailJS credentials
+    const EMAILJS_PUBLIC_KEY = "0eeWZM5ZL9SObkJx0";
+    const EMAILJS_SERVICE_ID = "service_zauu9aj";
+    const EMAILJS_TEMPLATE_ID = "template_lhec8dg";
+
+    // Initialize EmailJS
+    emailjs.init({
+        publicKey: EMAILJS_PUBLIC_KEY
+    });
+
     const form = document.getElementById("primeEnquiryForm");
-    const message = document.getElementById("enquiryMessage");
-    const charCount = document.getElementById("enquiryCharCount");
     const status = document.getElementById("contactFormStatus");
+    const submitButton = form?.querySelector(".contact-submit-btn");
+    const submitText = form?.querySelector(".contact-submit-text");
+    const messageField = document.getElementById("enquiryMessage");
+    const charCount = document.getElementById("enquiryCharCount");
 
-    if (message && charCount) {
+    if (!form) return;
+
+    // Character counter
+    if (messageField && charCount) {
         const updateCount = () => {
-            charCount.textContent = message.value.length;
+            charCount.textContent = messageField.value.length;
         };
 
-        message.addEventListener("input", updateCount);
+        messageField.addEventListener("input", updateCount);
         updateCount();
     }
 
-    if (!form || !status) return;
-
-    form.addEventListener("submit", (event) => {
+    // Form submission
+    form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
-        if (!form.reportValidity()) return;
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
 
-        status.textContent =
-            "Your form is ready, but online submission has not been configured yet.";
+        const originalButtonText = submitText
+            ? submitText.textContent
+            : "Submit Enquiry";
 
-        status.style.color = "#b4232b";
-    });
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.style.opacity = "0.7";
+            submitButton.style.cursor = "wait";
+        }
+
+        if (submitText) {
+            submitText.textContent = "Sending Enquiry...";
+        }
+
+        if (status) {
+            status.textContent = "Please wait while we send your enquiry.";
+            status.style.color = "#475569";
+        }
+
+        // Get readable product name instead of its hyphenated value
+        const productSelect = document.getElementById("enquiryProduct");
+        const selectedProduct = productSelect
+            ? productSelect.options[productSelect.selectedIndex].text.trim()
+            : "";
+
+        // Prepare template variables
+        const templateParams = {
+            name: document.getElementById("enquiryName").value.trim(),
+
+            company: document.getElementById("enquiryCompany").value.trim() || "Not provided",
+
+            phone: document.getElementById("enquiryPhone").value.trim(),
+
+            email: document.getElementById("enquiryEmail").value.trim(),
+
+            product: selectedProduct,
+
+            message: messageField.value.trim(),
+
+            time: new Date().toLocaleString("en-IN", {
+                dateStyle: "medium",
+                timeStyle: "short",
+                timeZone: "Asia/Kolkata"
+            })
+        };
+
+        try {
+            await emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                templateParams
+            );
+
+            if (status) {
+                status.textContent =
+                    "Thank you! Your enquiry has been sent successfully. Our team will contact you soon.";
+
+                status.style.color = "#15803d";
+            }
+
+            form.reset();
+
+            if (charCount) {
+                charCount.textContent = "0";
+            }
+
+        } catch (error) {
+            console.error("EmailJS submission error:", error);
+
+            if (status) {
+                status.textContent =
+                    "Sorry, your enquiry could not be sent. Please try again or contact us directly.";
+
+                status.style.color = "#dc2626";
+            }
+
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.style.opacity = "1";
+                submitButton.style.cursor = "pointer";
+            }
+
+            if (submitText) {
+                submitText.textContent = originalButtonText;
+            }
+        }
+    });F
+
 });
